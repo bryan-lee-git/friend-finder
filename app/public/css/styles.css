@@ -10,5 +10,14 @@ main {
 
 .swiper-container {
     width:100%;
-    height: 250px;
+    height: 200px;
+}
+
+#dropdown1 {
+    position:fixed;
+    top:-62px;
+    left: 46px;
+}
+#dropdown1 li {
+    text-align:right !important;
 }

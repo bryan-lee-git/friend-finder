@@ -1,13 +1,19 @@
 let friendsMachine = {
     friends: [],
-    pushToFriends: function(newFriend) {
+    pushToFriends: async function(surveyInput) {
+        let newFriend = new Friend(surveyInput.name, surveyInput.photo, surveyInput.scores);
+        let match = [];
         this.friends.push(newFriend);
+        await this.checkAllFriends(newFriend).then(result => {
+            match = result;
+        });
+        return match;
     },
-    checkAllFriends: async function(user) {
+    checkAllFriends: async function(newFriend) {
         let match =[];
         await this.friends.forEach(friend => {
-            user.checkForBestFriend(friend).then(diff => {
-                if (friend.name != user.name && diff < 29 ) {
+            newFriend.checkForBestFriend(friend).then(diff => {
+                if (friend.name != newFriend.name && diff < 14 ) {
                     match.push(friend);
                 }
             });
@@ -16,16 +22,16 @@ let friendsMachine = {
     }
 }
 
-let Friend = function(name, photo) {
+let Friend = function(name, photo, scores) {
     this.name = name; 
     this.photo = photo;
-    this.scores = [];
+    this.scores = scores || [];
     this.bestMatch = [];
 }
 Friend.prototype.getRandomStats = function() {
     for (i = 0; i <= 10; i++) {
         min = Math.ceil(1);
-        max = Math.floor(11);
+        max = Math.floor(6);
         const randNum = Math.floor(Math.random() * (max - min)) + min;
         this.scores.push(randNum);
     }
@@ -37,9 +43,6 @@ Friend.prototype.checkForBestFriend = async function(otherFriend) {
         if (diff < 0) diff = diff * -1;
         totalDiff+=diff;
     } return totalDiff;
-    // if (otherFriend.name != this.name) {
-    //     this.bestMatch.push([totalDiff, otherFriend]);
-    // }
 }
 
 var Anthony = new Friend("Anthony Barfus", "https://randomuser.me/api/portraits/men/52.jpg");
@@ -69,10 +72,6 @@ friendsMachine.friends.push(Kat);
 var Whitney = new Friend("Whitney Winger", "https://randomuser.me/api/portraits/women/52.jpg");
 Whitney.getRandomStats();
 friendsMachine.friends.push(Whitney);
-
-// friendsMachine.checkAllFriends(Bryan).then(result => {
-//     console.log(result);
-// })
 
 module.exports = friendsMachine;
 
