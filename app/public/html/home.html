@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FRIENDBOOK</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/materialize/css/materialize.css" media="screen,projection">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css//styles.css">
+</head>
+<body>
+
+    <!-- HEADER/NAV -->
+    <header>
+        <nav class="cyan darken-2">
+            <div class="nav-wrapper z-depth-5">
+                <div class="container">
+                    <a href="#" class="brand-logo">FRIENDBOOK</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/"><i class="material-icons">home</i></a>
+                        <li><a href="survey"><i class="material-icons">question_answer</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="cyan lighten-3">
+
+        <div style="width:100%;" class="z-depth-5 swiper-container">
+            <div class="swiper-wrapper">
+                <div style="background-image:url(../img/header2.jpeg);background-repeat:no-repeat;background-size:400px;" class="swiper-slide"></div>
+                <div style="background-image:url(../img/header3.jpeg);background-repeat:no-repeat;background-size:400px;" class="swiper-slide"></div>
+                <div style="background-image:url(../img/header4.jpeg);background-repeat:no-repeat;background-size:400px;" class="swiper-slide"></div>
+                <div style="background-image:url(../img/header5.jpeg);background-repeat:no-repeat;background-size:400px;" class="swiper-slide"></div>
+                <div style="background-image:url(../img/header1.jpeg);background-repeat:no-repeat;background-size:400px;" class="swiper-slide"></div>
+                <div style="background-image:url(../img/header6.jpeg);background-repeat:no-repeat;background-size:400px;" class="swiper-slide"></div>
+                <div style="background-image:url(../img/header7.jpeg);background-repeat:no-repeat;background-size:400px;" class="swiper-slide"></div>
+                <div style="background-image:url(../img/header9.jpeg);background-repeat:no-repeat;background-size:400px;" class="swiper-slide"></div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <br/>
+        <br/>
+        <div class="container center-align white-text" style="text-shadow:1px 1px 20px gray;">
+            <h2>WELCOME TO FRIENDBOOK!</h2>
+            <h4>Take a quick survey and have a new best friend in seconds!</h4><br/><br/>
+            <a href="/survey"><button style="width:70%;" class="z-depth-4 cyan darken-3 btn btn-large">Click Here to Start the Survey</button></a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div style="height:63px;" class="z-depth-5 footer-copyright">
+            <br/>
+            <div class="container">
+                © 2018 COPYRIGHT FRIENDBOOK INC.
+                <a class="black-text lighten-4 right" href="#!">FRIENDBOOK.COM</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../css/materialize/js/materialize.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js//swiper.esm.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            var mySwiper = new Swiper ('.swiper-container', {
+                init: true,
+                coverflowEffect: 
+                    {
+                        rotate: 30,
+                        slideShadows: false,
+                    },
+                autoplay: 
+                    {
+                        delay: 1000,
+                    },
+                slidesPerView: 5,
+                speed: 400,
+                direction: 'horizontal',
+                loop: true,
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            })
+        });
+    </script>
+</body>
+</html>

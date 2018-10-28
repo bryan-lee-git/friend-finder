@@ -1,0 +1,133 @@
+<!-- 1. Your survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FRIENDBOOK</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/materialize/css/materialize.css" media="screen,projection">
+    <link rel="stylesheet" href="../css//styles.css">
+</head>
+<body>
+
+    <!-- HEADER/NAV -->
+    <header>
+        <nav class="cyan">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="#" class="brand-logo">FRIENDBOOK</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/"><i class="material-icons">home</i></a>
+                        <li><a href="/survey"><i class="material-icons">question_answer</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="cyan lighten-3">
+        <div class="container center-align white" style="padding:20px;">
+            <h4>Describe yourself by moving the sliders below to match your personality.<br><strong>Then we'll crunch the numbers and find you your new best friend!</strong></h4><br/><br/>
+            <form id="friend-finder-survey">
+                <div style="padding:20px; border-radius:8px;" class="row z-depth-2">
+                    <div class="input-field col s4">
+                        <input id="first-name" type="text" class="validate">
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="last-name" type="text" class="validate">
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="photo" type="text" class="validate">
+                        <label for="photo">URL For Profile Photo</label>
+                    </div>
+                </div>
+                <div style="padding:20px; border-radius:8px;" class="row z-depth-2">
+                    <div class="row">
+                        <div class="col s6 range-field">
+                            <label for="video-games"><h5>I like to play video games...</h5></label>
+                            <input type="range" id="video-games" min="1" max="10" />
+                        </div>
+                        <div class="col s6 range-field">
+                            <label for="outdoors"><h5>I like the outdoors...</h5></label>
+                            <input type="range" id="outdoors" min="1" max="10" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6 range-field">
+                            <label for="concerts"><h5>I like to go to concerts...</h5></label>
+                            <input type="range" id="concerts" min="1" max="10" />
+                        </div>
+                        <div class="col s6 range-field">
+                            <label for="build"><h5>I like to build/create things...</h5></label>
+                            <input type="range" id="build" min="1" max="10" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6 range-field">
+                            <label for="shopping"><h5>I like to go shopping...</h5></label>
+                            <input type="range" id="shopping" min="1" max="10" />
+                        </div>
+                        <div class="col s6 range-field">
+                            <label for="sports"><h5>I like to play and watch sports...</h5></label>
+                            <input type="range" id="sports" min="1" max="10" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6 range-field">
+                            <label for="drinks"><h5>I like to go out for drinks...</h5></label>
+                            <input type="range" id="drinks" min="1" max="10" />
+                        </div>
+                        <div class="col s6 range-field">
+                            <label for="board-games"><h5>I like to play board games...</h5></label>
+                            <input type="range" id="board-games" min="1" max="10" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6 range-field">
+                            <label for="restaurants"><h5>I like to try fancy and foreign restaurants...</h5></label>
+                            <input type="range" id="restaurants" min="1" max="10" />
+                        </div>
+                        <div class="col s6 range-field">
+                            <label for="netflix-chill"><h5>I like to netflix and chill...</h5></label>
+                            <input type="range" id="netflix-chill" min="1" max="10" />
+                        </div>
+                    </div>
+                    <button id="friend-submit" type="submit" class="btn btn-large submit">Friend Your New Best Friend</button>
+                </div>
+            </form>
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Time to find your new best friend! Please give us a moment to crunch the data...</h4>
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div style="height:63px;" class="z-depth-5 footer-copyright">
+            <br/>
+            <div class="container">
+                © 2018 COPYRIGHT FRIENDBOOK INC.
+                <a class="black-text lighten-4 right" href="#!">FRIENDBOOK.COM</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../css/materialize/js/materialize.js"></script>
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
