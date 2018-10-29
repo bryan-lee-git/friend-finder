@@ -48,7 +48,7 @@ $("body").on("submit", "#friend-finder-survey", function(event) {
             `);
             data.match.forEach(match => {
                 $("#matches-container").append(`
-                    <div class="col s4">
+                    <div class="col s12 l4">
                         <div class="card">
                             <div class="card-image">
                                 <img src="${match.photo}" / >
