@@ -1,21 +1,53 @@
 $("#post-survey").hide(0);
-$(document).ready(function(){
+
+$(document).ready(function () {
     $(".modal").modal();
-    $(".dropdown-trigger").dropdown({ hover: true });
+    $(".dropdown-trigger").dropdown({
+        hover: true
+    });
 });
 
-$("body").on("submit", "#friend-finder-survey", function(event) {
+$(document).ready(function () {
+    var mySwiper = new Swiper('.swiper-container', {
+        init: true,
+        coverflowEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+        autoplay: {
+            delay: 1000,
+        },
+        slidesPerView: 6,
+        speed: 400,
+        direction: 'horizontal',
+        loop: true,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    })
+});
+
+$("body").on("submit", "#friend-finder-survey", function (event) {
     event.preventDefault();
     $("#survey-content").fadeOut(500);
     let newFriend = {
         name: `${$("#first-name").val().trim()} ${$("#last-name").val().trim()}`,
         photo: $("#photo").val().trim(),
-        scores: [ $("#video-games").val().trim(), $("#outdoors").val().trim(), $("#concerts").val().trim(), $("#build").val().trim(), $("#shopping").val().trim(), $("#sports").val().trim(), $("#drinks").val().trim(), $("#board-games").val().trim(), $("#restaurants").val().trim(), $("#netflix-chill").val().trim(), ],
+        scores: [
+            $("#video-games").val().trim(),
+            $("#outdoors").val().trim(),
+            $("#concerts").val().trim(),
+            $("#build").val().trim(),
+            $("#shopping").val().trim(),
+            $("#sports").val().trim(),
+            $("#drinks").val().trim(),
+            $("#board-games").val().trim(),
+            $("#restaurants").val().trim(),
+            $("#netflix-chill").val().trim()
+        ],
         bestMatch: []
     }
-    console.log(newFriend);
     $.post("/api/friends", newFriend, (data) => {
-        console.log(data);
         if (data) {
             $("#profile-container").empty();
             $("#matches-container").empty();
@@ -76,9 +108,6 @@ $("body").on("submit", "#friend-finder-survey", function(event) {
                 `);
             })
             $("#post-survey").fadeIn(1000);
-        }
-        else if (!data) {
-            console.log("No matches. Sorry!");
         }
     });
 });
